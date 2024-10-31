@@ -51,8 +51,39 @@ if "visibility" not in st.session_state:
     st.session_state.visibility = "visible"
     st.session_state.disabled = False
 
-st.title("🧱 Chatbot App")
-st.write("A basic chatbot using your own serving endpoint")
+
+# UI configurations
+st.set_page_config(page_title="Cubie",
+                   page_icon=":large_red_square:",
+                   layout="wide")
+
+col1, col2 = st.columns([1, 4])
+
+with col1:
+    st.image("Cubie.jpg", width=150)
+
+with col2:
+    st.title("Hello! I'm Cubie")
+    st.write("Your go-to AI assistant for self-storage needs")
+
+# Sidebar content
+st.sidebar.image("storage_unit.png", width=100)
+st.sidebar.title("Cubie by SmartCube")
+st.sidebar.write("AI-powered virtual assistant for all things self-storage.")
+
+# Display services in the sidebar
+st.sidebar.subheader("Cubie can help you with:")
+services = [
+    ("🔍", "Checking Availability"),
+    ("🆕", "Making a New Reservation"),
+    ("📦", "Finding the Perfect Storage Unit size"),
+    ("📅", "Account Status"),
+    ("📞", "Create a Support Case"),
+    ("🤝", "Connecting You with the Right Team for Call Assistance"),
+]
+for icon, service in services:
+    st.sidebar.write(f"{icon} {service}")
+
 
 # Initialize chat history
 if "messages" not in st.session_state:
