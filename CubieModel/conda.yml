@@ -1,0 +1,14 @@
+name: cubie_chatbot_env
+channels:
+  - defaults
+dependencies:
+  - pip
+  - pip:
+      - langchain_databricks
+      - langchain-community==0.2.10
+      - databricks-sdk==0.29.0
+      - langchain-core==0.3.14
+      - databricks-vectorsearch==0.40
+      - databricks-sdk==0.29.0
+      - mlflow==2.14.3
+      - pydantic==2.8.2
